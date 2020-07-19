@@ -1,7 +1,7 @@
 steps:
   - name: 'ubuntu'
     args: ['bash', '-c', 'date +%d-%m-%H:%M-$SHORT_SHA > _TAG']
-  - name: 'gcr.io/cloud-builders/gsutil'
+  - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args: 
     - -c
