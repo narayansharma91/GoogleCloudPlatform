@@ -23,3 +23,6 @@ steps:
       - >-
         --container-image="docker pull
         gcr.io/sumithra-first-project/node-app:e9075f6b-6297-4cf3-85c7-0bceec4792e4"
+substitutions:
+      _DATE: $(date +%d-%m-%H:%M)
+
