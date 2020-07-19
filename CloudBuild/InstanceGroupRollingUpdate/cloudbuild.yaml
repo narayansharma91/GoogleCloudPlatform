@@ -2,21 +2,4 @@ steps:
   - name: 'ubuntu'
     args: ['bash', '-c', 'date +%d-%m-%H:%M-$SHORT_SHA > _TAG']
   - name: 'bash'
-    args: ['echo', $(cat _TAG)']
-  - name: gcr.io/cloud-builders/gcloud
-    args:
-      - compute
-      - instance-templates
-      - create-with-container
-      - apace2-instance-template-$(date +%d-%m-%H:%M)
-      - '--project=$PROJECT_ID'
-      - '--machine-type=f1-micro'
-      - '--network=projects/$PROJECT_ID/global/networks/default'
-      - '--image=cos-stable-81-12871-181-0'
-      - '--image-project=cos-cloud'
-      - >-
-        --container-image="docker pull
-        gcr.io/sumithra-first-project/node-app:e9075f6b-6297-4cf3-85c7-0bceec4792e4"
-substitutions:
-      _DATE: $(date +%d-%m-%H:%M)
-
+    args: ['echo', $(cat _TAG)]
