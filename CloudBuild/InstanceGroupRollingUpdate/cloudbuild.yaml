@@ -1,6 +1,4 @@
 steps:
-    - name: 'bash'
-      args: ['ls']
     - name: 'gcr.io/cloud-builders/docker'
       args:
       - build
@@ -8,4 +6,6 @@ steps:
       - "--file=./CloudBuild/InstanceGroupRollingUpdate/Dockerfile"
       - .
     - name: 'gcr.io/cloud-builders/docker'
-      args: ['push', 'gcr.io/$PROJECT_ID/node-app:$BUILD_ID']
+      args: ['push', 'gcr.io/$PROJECT_ID/node-app:$SHORT_SHA']
+    
+    images: ['gcr.io/$PROJECT_ID/node-app:$SHORT_SHA']
