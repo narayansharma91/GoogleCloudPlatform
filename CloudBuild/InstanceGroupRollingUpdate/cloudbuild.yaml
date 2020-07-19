@@ -1,17 +1,7 @@
 steps:
-    - name: gcr.io/cloud-builders/docker
-      args:
-        - build
-        - '--tag=gcr.io/$PROJECT_ID/node-app:$SHORT_SHA'
-        - '--file=./CloudBuild/InstanceGroupRollingUpdate/Dockerfile'
-        - .
-    - name: gcr.io/cloud-builders/docker
-      args:
-        - push
-        - 'gcr.io/$PROJECT_ID/node-app:$SHORT_SHA'
     - name: 'gcr.io/cloud-builders/gcloud'
       entrypoint: 'bash'
       args: 
       - -c
       - |
-         gcloud compute instance-template create-with-container apace2-instance-template-$(date +%m-%d-%Y) --project=$PROJECT_ID --machine-type=f1-micro --network=projects/$PROJECT_ID/global/networks/default --image=cos-stable-81-12871-181-0 --image-project=cos-cloud --container-image="docker pull gcr.io/sumithra-first-project/node-app:e9075f6b-6297-4cf3-85c7-0bceec4792e4
+         gcloud compute instance-template create-with-container apace2-instance-template-$(date +%m-%d-%Y) --project=$PROJECT_ID --machine-type=f1-micro --network=projects/$PROJECT_ID/global/networks/default --image=cos-stable-81-12871-181-0 --image-project=cos-cloud --container-image="docker pull gcr.io/sumithra-first-project/node-app:e9075f6b-6297-4cf3-85c7-0bceec4792e4"
