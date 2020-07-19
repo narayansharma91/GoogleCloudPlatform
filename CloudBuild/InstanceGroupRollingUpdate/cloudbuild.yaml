@@ -1,14 +1,6 @@
 steps:
-  - name: gcr.io/cloud-builders/docker
-    args:
-      - build
-      - '--tag=gcr.io/$PROJECT_ID/node-app:$SHORT_SHA'
-      - '--file=./CloudBuild/InstanceGroupRollingUpdate/Dockerfile'
-      - .
-  - name: gcr.io/cloud-builders/docker
-    args:
-      - push
-      - 'gcr.io/$PROJECT_ID/node-app:$SHORT_SHA'
+  - name: 'bash'
+    args: ['echo', '$_DATE']
   - name: gcr.io/cloud-builders/gcloud
     args:
       - compute
