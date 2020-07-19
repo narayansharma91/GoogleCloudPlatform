@@ -2,6 +2,6 @@ steps:
     - name: 'bash'
       args: ['ls']
     - name: 'gcr.io/cloud-builders/docker'
-      args: ['build', '-t', 'gcr.io/$PROJECT_ID/node-app:$BUILD_ID', '-f', '/InstanceGroupRollingUpdate/Dockerfile', '.']
+      args: ['build', '-t', 'gcr.io/$PROJECT_ID/node-app:$BUILD_ID', '-f', 'InstanceGroupRollingUpdate/Dockerfile', '.']
     - name: 'gcr.io/cloud-builders/docker'
       args: ['push', 'gcr.io/$PROJECT_ID/node-app:$BUILD_ID']
