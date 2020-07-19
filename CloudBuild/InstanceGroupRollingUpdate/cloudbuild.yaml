@@ -5,8 +5,10 @@ steps:
       - "--tag=gcr.io/$PROJECT_ID/node-app:$SHORT_SHA"
       - "--file=./CloudBuild/InstanceGroupRollingUpdate/Dockerfile"
       - .
-    - name: 'ubuntu'
-      args: ["echo", 'date +%d-%m-%H:%M']
+    - name: 'bash'
+      args: ['echo', 'displayDate=date +%d-%m-%H:%M']
+    - name: 'bash'
+      args: ['echo', '$displayDate']
 
 #     - name: 'gcr.io/cloud-builders/docker'
 #       args: ['push', 'gcr.io/$PROJECT_ID/node-app:$SHORT_SHA']
