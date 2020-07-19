@@ -5,7 +5,10 @@ steps:
       - "--tag=gcr.io/$PROJECT_ID/node-app:$SHORT_SHA"
       - "--file=./CloudBuild/InstanceGroupRollingUpdate/Dockerfile"
       - .
-    - name: 'gcr.io/cloud-builders/docker'
-      args: ['push', 'gcr.io/$PROJECT_ID/node-app:$SHORT_SHA']
+    - name: 'ubuntu'
+      args: ["echo", "date +'%d-%m-%H:%M'"]
+
+#     - name: 'gcr.io/cloud-builders/docker'
+#       args: ['push', 'gcr.io/$PROJECT_ID/node-app:$SHORT_SHA']
     
-    images: ['gcr.io/$PROJECT_ID/node-app:$SHORT_SHA']
+#     images: ['gcr.io/$PROJECT_ID/node-app:$SHORT_SHA']
