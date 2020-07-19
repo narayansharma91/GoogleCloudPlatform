@@ -6,7 +6,7 @@ steps:
       - "--file=./CloudBuild/InstanceGroupRollingUpdate/Dockerfile"
       - .
     - name: 'ubuntu'
-      args: ["echo", "date +'%d-%m-%H:%M'"]
+      args: ["echo", 'date +%d-%m-%H:%M']
 
 #     - name: 'gcr.io/cloud-builders/docker'
 #       args: ['push', 'gcr.io/$PROJECT_ID/node-app:$SHORT_SHA']
