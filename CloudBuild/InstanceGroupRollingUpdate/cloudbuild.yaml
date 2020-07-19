@@ -1,5 +1,9 @@
 steps:
   - name: 'ubuntu'
     args: ['bash', '-c', 'date +%d-%m-%H:%M-$SHORT_SHA > _TAG']
-  - name: 'bash'
-    args: ['echo', $(cat _TAG)]
+  - name: 'gcr.io/cloud-builders/gsutil'
+    entrypoint: 'bash'
+    args: 
+    - -c
+    - |
+      echo $(date +%m-%d-%Y)
