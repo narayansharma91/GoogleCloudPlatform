@@ -14,7 +14,7 @@ steps:
       - compute
       - instance-templates
       - create-with-container
-      - apace2-instance-template
+      - apace2-instance-template-$_DATE
       - '--project=$PROJECT_ID'
       - '--machine-type=f1-micro'
       - '--network=projects/$PROJECT_ID/global/networks/default'
