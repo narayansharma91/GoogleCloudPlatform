@@ -30,3 +30,5 @@ steps:
         $_INSTANCE_GROUP
         --template=$_TEMPLATE_PREFIX-$(date +%d-%m)-${SHORT_SHA}
         --zone=asia-south1-c
+  - name: gcr.io/cloud-builders/gcloud
+    args: [ compute, instance-groups, managed, rolling-action, replace,   $_INSTANCE_GROUP, --zone=asia-south1-c]
