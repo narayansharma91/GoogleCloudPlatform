@@ -20,4 +20,4 @@ steps:
       args: 
       - -c
       - |
-         gcloud compute instance-groups managed set-instance-template internal-load-balancer-instance-group --template=node-app-template-$(date +%d-%m)-${SHORT_SHA} --region=asia-south1"
+         gcloud compute instance-groups managed set-instance-template internal-load-balancer-instance-group --template=node-app-template-$(date +%d-%m)-${SHORT_SHA} --region=asia-south1
