@@ -29,4 +29,4 @@ steps:
         gcloud compute instance-groups managed set-instance-template
         $_INSTANCE_GROUP
         --template=$_TEMPLATE_PREFIX-$(date +%d-%m)-${SHORT_SHA}
-        --region=asia-south1
+        --zone=asia-south1-c
