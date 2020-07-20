@@ -1,34 +1,23 @@
 steps:
-  - name: gcr.io/cloud-builders/docker
-    args:
-      - build
-      - '--tag=gcr.io/$PROJECT_ID/node-app:$SHORT_SHA'
-      - '--file=./CloudBuild/InstanceGroupRollingUpdate/Dockerfile'
-      - .
-  - name: gcr.io/cloud-builders/docker
-    args:
-      - push
-      - 'gcr.io/$PROJECT_ID/node-app:$SHORT_SHA'
-  - name: gcr.io/cloud-builders/gcloud
-    entrypoint: bash
-    args:
-      - '-c'
-      - >
-        gcloud compute instance-templates create-with-container
-        node-app-template-$(date +%d-%m)-${SHORT_SHA} --project=$PROJECT_ID
-        --machine-type=f1-micro
-        --network=projects/$PROJECT_ID/global/networks/default
-        --image=cos-stable-81-12871-181-0 --image-project=cos-cloud
-        --container-image="docker pull
-        gcr.io/$PROJECT_ID/node-app:node-app:$SHORT_SHA"
-  - name: gcr.io/cloud-builders/gcloud
-    entrypoint: bash
-    args:
-      - '-c'
-      - >
-        gcloud compute instance-groups managed set-instance-template
-        internal-load-balancer-instance-group
-        --template=node-app-template-$(date +%d-%m)-${SHORT_SHA}
-        --region=asia-south1"
-images:
-  - 'gcr.io/$PROJECT_ID/node-app:$SHORT_SHA'
+    - name: gcr.io/cloud-builders/docker
+      args:
+        - build
+        - '--tag=gcr.io/$PROJECT_ID/node-app:$SHORT_SHA'
+        - '--file=./CloudBuild/InstanceGroupRollingUpdate/Dockerfile'
+        - .
+    - name: gcr.io/cloud-builders/docker
+      args:
+        - push
+        - 'gcr.io/$PROJECT_ID/node-app:$SHORT_SHA'
+    - name: 'gcr.io/cloud-builders/gcloud'
+      entrypoint: 'bash'
+      args: 
+      - -c
+      - |
+         gcloud compute instance-templates create-with-container node-app-template-$(date +%d-%m)-${SHORT_SHA} --project=$PROJECT_ID --machine-type=f1-micro --network=projects/$PROJECT_ID/global/networks/default --image=cos-stable-81-12871-181-0 --image-project=cos-cloud --container-image="docker pull gcr.io/$PROJECT_ID/node-app:node-app:$SHORT_SHA"
+    - name: 'gcr.io/cloud-builders/gcloud'
+      entrypoint: 'bash'
+      args: 
+      - -c
+      - |
+         gcloud compute instance-groups managed set-instance-template internal-load-balancer-instance-group --template=node-app-template-$(date +%d-%m)-${SHORT_SHA} --region=asia-south1"
