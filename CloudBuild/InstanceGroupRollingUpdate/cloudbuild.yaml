@@ -20,8 +20,7 @@ steps:
         --network=projects/$PROJECT_ID/global/networks/default
         --image=cos-stable-81-12871-181-0 --image-project=cos-cloud 
         --preemptible 
-        --container-image="docker pull
-        gcr.io/$PROJECT_ID/node-app:node-app:$SHORT_SHA"
+        --container-image="gcr.io/$PROJECT_ID/node-app:node-app:$SHORT_SHA"
   - name: gcr.io/cloud-builders/gcloud
     entrypoint: bash
     args:
