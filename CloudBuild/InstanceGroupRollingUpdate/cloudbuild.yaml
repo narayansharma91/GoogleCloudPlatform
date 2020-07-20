@@ -19,7 +19,7 @@ steps:
         --machine-type=f1-micro
         --network=projects/$PROJECT_ID/global/networks/default
         --image=cos-stable-81-12871-181-0 --image-project=cos-cloud 
-        --preemptible
+        --preemptible 
         --container-image="docker pull
         gcr.io/$PROJECT_ID/node-app:node-app:$SHORT_SHA"
   - name: gcr.io/cloud-builders/gcloud
