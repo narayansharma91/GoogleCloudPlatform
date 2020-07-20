@@ -15,7 +15,7 @@ steps:
       - '-c'
       - >
         gcloud compute instance-templates create-with-container
-        node-app-template-$(date +%d-%m)-${SHORT_SHA} --project=$PROJECT_ID
+        $_TEMPLATE_PREFIX-$(date +%d-%m)-${SHORT_SHA} --project=$PROJECT_ID
         --machine-type=f1-micro
         --network=projects/$PROJECT_ID/global/networks/default
         --image=cos-stable-81-12871-181-0 --image-project=cos-cloud
@@ -28,5 +28,5 @@ steps:
       - >
         gcloud compute instance-groups managed set-instance-template
         $_INSTANCE_GROUP
-        --template=node-app-template-$(date +%d-%m)-${SHORT_SHA}
+        --template=$_TEMPLATE_PREFIX-$(date +%d-%m)-${SHORT_SHA}
         --region=asia-south1
