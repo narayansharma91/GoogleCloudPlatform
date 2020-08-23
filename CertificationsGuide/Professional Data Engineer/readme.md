@@ -1,6 +1,6 @@
 ## Data&nbsp;Engineer&nbsp;Guide&nbsp;Index
 1. [Ingestion](#Ingestion)
-    - [Pubsub](###Pubsub)
+    - [Pubsub](#Pubsub)
     - Appengine
     - Kubernetes Engine
     - Cloud Transfer Services
@@ -13,7 +13,7 @@
     - Cloud Spanner
     - Cloud Bigquery
 3. [Processing&nbsp;&amp;&nbsp;Analyze](#Process&nbsp;&amp;&nbsp;Analyze)
-    - [Dataflow](##Dataflow)
+    - [Dataflow](#Dataflow)
     - Dataproc
     - Dataprep
     - Bigquery
@@ -42,18 +42,17 @@
     - [Publish Message (python SDK)](examples/pubsub/publishMessage.py)
     - [Pull Message (python SDK)](examples/pubsub/pullMessage.py)
     
-
-[Top](##Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
+[Top](#Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
 
 # Storage
 
-[Top](##Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
+[Top](#Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
 # Process&nbsp;&amp;&nbsp;Analyze
 
-[Top](##Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
+[Top](#Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
 # Expore&nbsp;&amp;&nbsp;Visualize
 
-[Top](##Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
+[Top](#Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
 <hr/>
 
 ## Dataflow
