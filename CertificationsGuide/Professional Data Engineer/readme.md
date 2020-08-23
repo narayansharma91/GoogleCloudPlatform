@@ -42,7 +42,7 @@
     - [Publish Message (python SDK)](examples/pubsub/publishMessage.py)
     - [Pull Message (python SDK)](examples/pubsub/pullMessage.py)
     
-[Top](#Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
+[Top](#dataengineerguideindex)
 
 # Storage
 
