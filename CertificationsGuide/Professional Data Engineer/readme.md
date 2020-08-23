@@ -1,4 +1,4 @@
-## Data&nbsp;Engineer&nbsp;Guide&nbsp;Index
+## dataengineerguideindex
 1. [Ingestion](#Ingestion)
     - [Pubsub](#Pubsub)
     - Appengine
@@ -42,17 +42,17 @@
     - [Publish Message (python SDK)](examples/pubsub/publishMessage.py)
     - [Pull Message (python SDK)](examples/pubsub/pullMessage.py)
     
-[Top](#Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
+[Top](#DataEngineerGuideIndex)
 
 # Storage
 
-[Top](#Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
+[Top](#dataengineerguideindex)
 # Process&nbsp;&amp;&nbsp;Analyze
 
-[Top](#Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
+[Top](#dataengineerguideindex)
 # Expore&nbsp;&amp;&nbsp;Visualize
 
-[Top](#Data&nbsp;Engineer&nbsp;Guide&nbsp;Index)
+[Top](#dataengineerguideindex)
 <hr/>
 
 ## Dataflow
