@@ -1,5 +1,6 @@
 FROM node:12
 COPY . .
+WORKDIR CloudBuild/InstanceGroupRollingUpdate
 RUN npm install
-EXPOSE 3000
+EXPOSE 80
 CMD ["node", "server.js"];

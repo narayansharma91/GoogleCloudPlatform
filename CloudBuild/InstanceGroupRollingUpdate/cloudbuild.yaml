@@ -18,9 +18,9 @@ steps:
         $_TEMPLATE_PREFIX-$(date +%d-%m)-${SHORT_SHA} --project=$PROJECT_ID
         --machine-type=f1-micro
         --network=projects/$PROJECT_ID/global/networks/default
-        --image=cos-stable-81-12871-181-0 --image-project=cos-cloud
-        --container-image="docker pull
-        gcr.io/$PROJECT_ID/node-app:node-app:$SHORT_SHA"
+        --image=cos-stable-81-12871-181-0 --image-project=cos-cloud 
+        --preemptible 
+        --container-image="gcr.io/$PROJECT_ID/node-app:$SHORT_SHA"
   - name: gcr.io/cloud-builders/gcloud
     entrypoint: bash
     args:
@@ -29,6 +29,6 @@ steps:
         gcloud compute instance-groups managed set-instance-template
         $_INSTANCE_GROUP
         --template=$_TEMPLATE_PREFIX-$(date +%d-%m)-${SHORT_SHA}
-        --region=asia-south1
+        --region=$_REGION
   - name: gcr.io/cloud-builders/gcloud
-    args: [ compute, instance-groups, managed, rolling-action, replace, $_INSTANCE_GROUP, --region=asia-south1]
+    args: [ compute, instance-groups, managed, rolling-action, replace, $_INSTANCE_GROUP, --region=$_REGION]
