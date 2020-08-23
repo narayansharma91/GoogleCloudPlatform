@@ -42,17 +42,17 @@
     - [Publish Message (python SDK)](examples/pubsub/publishMessage.py)
     - [Pull Message (python SDK)](examples/pubsub/pullMessage.py)
     
-[Top](#dataengineerguideindex)
+[Top](#dataengineerguide)
 
 # Storage
 
-[Top](#dataengineerguideindex)
+[Top](#dataengineerguide)
 # Process&nbsp;&amp;&nbsp;Analyze
 
-[Top](#dataengineerguideindex)
+[Top](#dataengineerguide)
 # Expore&nbsp;&amp;&nbsp;Visualize
 
-[Top](#dataengineerguideindex)
+[Top](#dataengineerguide)
 <hr/>
 
 ## Dataflow
