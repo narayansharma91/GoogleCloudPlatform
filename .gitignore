@@ -1,2 +1,4 @@
 service-keys/*
 venv/*
+CertificationsGuide/Professional Data Engineer/examples/dataflow/outputs/*
+.vscode/*
