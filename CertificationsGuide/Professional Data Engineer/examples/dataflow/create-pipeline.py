@@ -12,6 +12,6 @@ createPipeline = (
         {"age": 26, "name": "Pardeep Sharma", "Rollno": 50}
         ])
     | beam.Map(combinedObject)
-    | beam.io.WriteToText('outputs/1.txt')
+    | beam.io.WriteToText('outputs/output.txt')
 )
 p1.run()

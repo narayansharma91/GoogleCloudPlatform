@@ -13,7 +13,7 @@
     - Cloud Bigquery
 3. [Processing&nbsp;&amp;&nbsp;Analyze](#Process&nbsp;&amp;&nbsp;Analyze)
     - [Dataflow](#Dataflow)
-    - Dataproc
+    - [Dataproc](#Dataproc) 
     - Dataprep
     - Bigquery
     - Cloud ML
@@ -80,19 +80,46 @@
 
 ## Dataflow
 - **Basics of Apache Flink:** Distributed processing engine for stateful computations over unbounded and bounded data streams.
-  - **Unbounded streams:** Unbounded streams have a start but no defined end. They do not terminate and provide data as it is generated. Unbounded streams must be continuously processed,
-  - **Bounded Stream:** have a defined start and end. Bounded streams can be processed by ingesting all data before performing any computations. Ordered ingestion is not required to process bounded streams because a bounded data set can always be sorted. Processing of bounded streams is also known as batch processing.
-- **Understand Apache Beam:** Ingest batch & stream processing data and transform those data as required and store into appropriate storage eg. Bigquery, Cloud Storage etc.
+  - **Unbounded streams:** 
+    - kind of streaming data
+    - no start and no end (continuously processed)
+  - **Bounded Stream:** 
+    - Batch processing
+- **Understand Apache Beam:** 
+    - Based on unified models(single api for streaming and batch processing).
+    - write once and run on multiple execution engine eg. google cloud dataflow, flink, spark etc
  - Apache beam can run on top of **Google Cloud Dataflow**, spark, **Flink** etc.
  -  **Supported SDK**:
     * Python
     * Java
     * Go
 - So, what is DataFlow? 
-  - Managed data processing services by google based on **Apache Beam**
+  - Managed data processing services(engine) by google based on **Apache Beam**
   - Horizontal autoscaling
   - Pay as you use
   - Pre-defined data processing pipeline template managed by google.
   - Can create own data processing pipeline in any of supported SDK.
-- Dataflow window types
-- Handle late arrival data
+- Dataflow window types (for stream processing)
+    - Fixed windows (Tumbling windows)
+    - Sliding windows (Hopping windows)
+    - Session windows
+- Handle late arrival data(watermark)
+- Understand event time vs processing time
+- Use to ingest (from bucket, pubsub etc), transform and store somewhere as required (eg. cloud storage, bigquery, bigtable etc)
+- **Access Control**
+    - Dataflow Developer: Provide necessary permission to execute & manipulate dataflow jobs.
+    - Dataflow Worker: Provide necessary permission to execute dataflow pipeline 
+
+## Dataproc
+- Managed Apache Spark, Hadoop on Google Cloud Platform having pre-installed software for batch, stream, quering and machine learning processing.
+    - Resizable clusters
+    - Autoscalling clusters
+    - Pay what you use
+    - Easy to spin up clusters in 1 or 2 minutes.
+- **Understand the Hadoop Components**
+    - HDFS: 
+    - MapReduce: 
+    - Yarn: 
+    - Pig: 
+    - Hive: 
+    - Spark: 

@@ -1,13 +1,10 @@
 import apache_beam as beam
 import json
 
-def getElement(element):
-  return element['cost_name'] == 'clothes' or element['cost_name'] == 'vegetables'
-
 def mapElement(element):
   return (element[0], sum(element[1]))
 
-def convertToDictory(element):
+def convertToTuple(element):
   return (element['cost_name'], element['amount'])
 
 def loadFile():
@@ -18,11 +15,11 @@ with beam.Pipeline() as pipeline:
   sample = (
       pipeline
         #| beam.io.ReadFromText('inputs/input.json')//read file line by line
-        | beam.Create(loadFile())
-        #| beam.Map(convertDictionary)
-        | beam.Map(convertToDictory)
+        | beam.Create(loadFile())#load whole json file at once
+        #| beam.Map(convertToTuple) #calling function
+        | beam.Map(lambda element: (element['cost_name'], element['amount']))#lamda function implementation
         | beam.GroupByKey()
-        | beam.Map(mapElement)
+        #| beam.Map(mapElement)#calling function
+        | beam.Map(lambda element: (element[0], sum(element[1]))) #lamda function implement alternate of function calling
         | beam.io.WriteToText('outputs/output.txt')
   )
-  print(sample)
