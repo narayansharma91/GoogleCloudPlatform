@@ -49,4 +49,4 @@ rsa==4.6
 six==1.15.0
 typing==3.7.4.3
 typing-extensions==3.7.4.2
-urllib3==1.25.10
+urllib3==1.26.5
